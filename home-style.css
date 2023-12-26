@@ -1,0 +1,184 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container:before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    left: 0;
+    background-color: #b0d9b1;
+}
+.container .hero{
+    position: relative;
+    z-index: 10;
+    height: 85vh;
+    width: 75%;
+    background-color: rgba(225, 225, 225, 0.1);
+    backdrop-filter: blur(25px);
+    border: 3px solid #b0d9b1;
+    border-radius: 20px;
+    box-shadow: -15px 17px 17px rgba(10, 10, 10, 0.15);
+    padding: 0 40px 0 80px;
+}
+.hero nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    width: 100%;
+
+}
+.hero nav .logo{
+    width: 100px;
+}
+.hero nav .nav-links a{
+    color: #242424;
+    margin-left: 40px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+.hero nav .nav-links a:hover,
+.hero nav .nav-links a.active{
+    color: #79ac78;
+}
+.hero .content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 40px;
+}
+.hero .content .div-text{
+    width: 40%;
+}
+.hero .content .div-text h1{
+    margin-bottom: 20px;
+    font-size: 45px;
+    color: #fff;
+}
+.hero .content .div-text h4{
+    color: #79ac78;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.hero .content .div-text p{
+    color: #618264;
+    margin-bottom: 50px;
+    font-size: 18px;
+}
+.hero .content .div-text .btn{
+    padding: 15px 20px;
+    background-color: #79ac78;
+    border: 2px solid #79ac78;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.hero .content .div-text .btn:hover{
+    color: #79ac78;
+    transition: 0.3s;
+    background-color: transparent;
+}
+.hero .content .div-img{
+    width: 40%;
+}
+.hero .content .div-img img{
+    width: 100%;
+}
+.soc-link{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+}
+.soc-link a i{
+    font-size: 25px;
+    cursor: pointer;
+    color: #79ac78;
+    margin-bottom: 20px;
+    transition: .4s;
+}
+.soc-link a i:hover{
+    color: #b0d9b1;
+}
+
+/*animation*/
+.hero .content .div-text h1,
+.hero .content .div-text h4,
+.hero .content .div-text p,
+.hero .content .div-text .btn{
+    position: relative;
+    top: 50px;
+    animation: slide-top .5s linear forwards;
+    opacity: 0;
+}
+.hero .content .div-text h1{
+    animation-delay: 0.5s;
+}
+.hero .content .div-text h4{
+    animation-delay: 0.9s;
+}
+.hero .content .div-text p{
+    animation-delay: 1.4s;
+}
+.hero .content .div-text .btn{
+    animation-delay: 1.8s;
+}
+@keyframes slide-top{
+    0%{
+        top: 50px;
+        opacity: 0;
+    }
+    100%{
+        top: 0;
+        opacity: 1;
+    }
+}
+.hero .content .div-img img{
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fade-img .5s linear forwards;
+    animation-delay: 2s;
+}
+@keyframes fade-img{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.hero .soc-link a{
+    position: relative;
+    right: 0px;
+    animation: slide-right .5s linear forwards;
+    animation-delay: 2s;
+    opacity: 0;
+}
+@keyframes slide-right{
+    0%{
+        right: 0px;
+        opacity: 0;
+    }
+    100%{
+        right: 10px;
+        opacity: 1;
+    }
+}
